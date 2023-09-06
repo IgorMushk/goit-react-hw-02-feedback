@@ -2,11 +2,19 @@ import { Component } from 'react';
 import { Container } from './App.styled';
 
 export class App extends Component {
-  render() {
-    return <Container>React homework template</Container>;
-  }
-}
+  state = {
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  };
 
+  render() {
+    return <Container>
+      React homework template
+      </Container>;
+  }
+
+}
 
 // export const App = () => {
 //   return (
