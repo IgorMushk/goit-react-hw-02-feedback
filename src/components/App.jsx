@@ -2,6 +2,7 @@ import { Component } from 'react';
 import { Container } from './App.styled';
 import { Section } from './Section/Section';
 import { Feedback } from './Feedback/Feedback';
+import { Statistics } from './Statistics/Statistics';
 
 export class App extends Component {
   state = {
@@ -45,11 +46,12 @@ countPositiveFeedbackPercentage = () => {
             onLevelFeedback={this.onLevelFeedback}/>
         </Section>
         <Section title="Statistics">
-          <p>Good: {this.state.good}</p>
-          <p>Netural: {this.state.netural}</p>
-          <p>Bad: {this.state.bad}</p>
-          <p>Total: {this.countTotalFeedback()}</p>
-          <p>Positive feedback: {this.countPositiveFeedbackPercentage()}%</p>
+          <Statistics
+          good={this.state.good}
+          netural={this.state.netural}
+          bad={this.state.bad}
+          total={this.countTotalFeedback()}
+          positiveFeedback={this.countPositiveFeedbackPercentage()}/>
           {/* <Notification message="There is no feedback"></Notification> */}
         </Section >
       </Container>
