@@ -9,6 +9,21 @@ export const Container = styled.div`
   font-size: 40px;
   color: #010101;
   background-color: #e7ecf2;
+  & > ul,
+  li,
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  & > ul,
+  ol,
+  li {
+    list-style: none;
+  }
 `;
 
 // export const Container = styled.div`

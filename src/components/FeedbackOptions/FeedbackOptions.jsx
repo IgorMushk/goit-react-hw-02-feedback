@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import { FeedbackBtn } from './Feedback.styled';
+import { FeedbackBtn } from './FeedbackOptions.styled';
 
-export const Feedback = ({ options, onLevelFeedback }) => {
+export const FeedbackOptions = ({ options, onLevelFeedback }) => {
   //console.log('option', options);
   //console.log('onLevelFeedback', onLevelFeedback)
   return (
@@ -19,7 +19,7 @@ export const Feedback = ({ options, onLevelFeedback }) => {
   );
 };
 
-Feedback.protoType = {
+FeedbackOptions.protoType = {
     onAddFeedback: PropTypes.func,
   };
   

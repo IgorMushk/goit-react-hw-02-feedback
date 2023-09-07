@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { Container } from './App.styled';
 import { Section } from './Section/Section';
-import { Feedback } from './Feedback/Feedback';
+import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Statistics } from './Statistics/Statistics';
 
 export class App extends Component {
@@ -21,7 +21,7 @@ export class App extends Component {
   onLevelFeedback = option => {
     this.setState(prevState => ({ [option]: prevState[option] + 1 }));
     //console.log('setState', this.setState)
-    console.log('setState - option', option);
+    //console.log('setState - option', option);
   };
 
   countTotalFeedback = () => {
@@ -32,15 +32,15 @@ export class App extends Component {
   countPositiveFeedbackPercentage = () => {
     const { good } = this.state;
     if (good === 0) return 0;
-    //return  Math.round((good/this.countTotalFeedback()*100))
-    return ((good / this.countTotalFeedback()) * 100).toFixed(1);
+    return  Math.round((good/this.countTotalFeedback()*100))
+    //return ((good / this.countTotalFeedback()) * 100).toFixed(1);
   };
 
   render() {
     return (
       <Container>
         <Section title="Please leave feedback">
-          <Feedback
+          <FeedbackOptions
             options={['good', 'neutral', 'bad']}
             onLevelFeedback={this.onLevelFeedback}
           />
@@ -49,10 +49,12 @@ export class App extends Component {
           {this.countTotalFeedback() ? (
             <Statistics
               good={this.state.good}
-              netural={this.state.netural}
+              netural={this.state.neutral}
               bad={this.state.bad}
               total={this.countTotalFeedback()}
-              positiveFeedback={this.countPositiveFeedbackPercentage()}
+              //positiveFeedback={this.countPositiveFeedbackPercentage()}
+              //positive={this.countTotalFeedback()}
+              positivePercentage={this.countPositiveFeedbackPercentage()}
             />
           ) : (
             // <Notification message="There is no feedback"></Notification>
