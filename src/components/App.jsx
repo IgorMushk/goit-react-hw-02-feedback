@@ -11,15 +11,15 @@ export class App extends Component {
   render() {
     return (
     <Container>
-      <div>
+      <section>
         <h2>Please leave feedback</h2>
          <div>
           <button type='button'>good</button>
           <button type='button'>netural</button>
           <button type='button'>bad</button>
          </div>
-      </div>
-      <div>
+      </section>
+      <section>
         <h2>Statistics</h2>
         {/* <Notification message="There is no feedback"></Notification> */}
         <p>Good: 3</p>
@@ -27,7 +27,7 @@ export class App extends Component {
         <p>Bad: 2</p>
         <p>Total: 7</p>
         <p>Positive feedback: 43%</p>
-      </div>
+      </section>
     </Container>
     )
   }
