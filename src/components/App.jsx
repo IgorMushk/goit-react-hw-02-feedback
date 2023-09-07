@@ -57,7 +57,14 @@ countPositiveFeedbackPercentage = () => {
   }
 }
 
-
+//<Section title="Statistics">
+//<p>Good: {this.state.good}</p>
+//<p>Netural: {this.state.netural}</p>
+//<p>Bad: {this.state.bad}</p>
+//<p>Total: {this.countTotalFeedback()}</p>
+//<p>Positive feedback: {this.countPositiveFeedbackPercentage()}%</p>
+//{/* <Notification message="There is no feedback"></Notification> */}
+//</Section >
 
 // export const App = () => {
 //   return (
