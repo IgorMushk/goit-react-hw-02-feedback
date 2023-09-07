@@ -24,6 +24,16 @@ export class App extends Component {
     console.log('setState - option', option)
   };
 
+countTotalFeedback = () => {
+  const { good, neutral, bad } = this.state;
+    return good + neutral + bad;
+};
+
+countPositiveFeedbackPercent = () => {
+  const { good} = this.state;
+  return  (good/this.countTotalFeedback())
+}
+
   render() {
     return (
       <Container>
@@ -32,15 +42,19 @@ export class App extends Component {
             options={['good', 'neutral', 'bad']}
             onLevelFeedback={this.onLevelFeedback}/>
         </Section>
-        <section>
-          <h2>Statistics</h2>
+        <Section title="Statistics" 
+        good={this.state.good}
+        neutral={this.state.netural}
+        bad={this.state.bad}
+        positiveFeedback={this.countPositiveFeedbackPercent()}
+        >
           <p>Good: 3</p>
           <p>Netural: 2</p>
           <p>Bad: 2</p>
           <p>Total: 7</p>
           <p>Positive feedback: 43%</p>
           {/* <Notification message="There is no feedback"></Notification> */}
-        </section>
+        </Section >
       </Container>
     );
   }
