@@ -40,7 +40,6 @@ export const ButtonStyle = styled.button`
 
   &.bad {
     border: 1px solid #ec5252;
-    //border: '1px solid red'
   }
   &.bad:hover {
     background-color: #ec5252;
