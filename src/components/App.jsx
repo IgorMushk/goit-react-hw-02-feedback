@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { Container } from './App.styled';
 import { Section } from './Section/Section';
+import { Feedback } from './Feedback/Feedback';
 
 export class App extends Component {
   state = {
@@ -9,22 +10,39 @@ export class App extends Component {
     bad: 0,
   };
 
+  
+  // onLevelFeedback = option => {
+  //   this.setState(prevState => ({
+  //     ...prevState,
+  //     [option]: prevState[option] + 1,
+  //   }));
+  // };
+
+  onLevelFeedback = option => {
+    this.setState(prevState => ({ [option]: prevState[option] + 1 }));
+    //console.log('setState', this.setState)
+    console.log('setState - option', option)
+  };
+
   render() {
     return (
-    <Container>
-      <Section  title="">
-      </Section>
-      <section>
-        <h2>Statistics</h2>
-        {/* <Notification message="There is no feedback"></Notification> */}
-        <p>Good: 3</p>
-        <p>Netural: 2</p>
-        <p>Bad: 2</p>
-        <p>Total: 7</p>
-        <p>Positive feedback: 43%</p>
-      </section>
-    </Container>
-    )
+      <Container>
+        <Section title="Please leave feedback">
+          <Feedback
+            options={['good', 'neutral', 'bad']}
+            onLevelFeedback={this.onLevelFeedback}/>
+        </Section>
+        <section>
+          <h2>Statistics</h2>
+          <p>Good: 3</p>
+          <p>Netural: 2</p>
+          <p>Bad: 2</p>
+          <p>Total: 7</p>
+          <p>Positive feedback: 43%</p>
+          {/* <Notification message="There is no feedback"></Notification> */}
+        </section>
+      </Container>
+    );
   }
 }
 
