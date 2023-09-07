@@ -29,9 +29,11 @@ countTotalFeedback = () => {
     return good + neutral + bad;
 };
 
-countPositiveFeedbackPercent = () => {
+countPositiveFeedbackPercentage = () => {
   const { good} = this.state;
-  return  (good/this.countTotalFeedback())
+  if (good === 0) return 0;
+  //return  Math.round((good/this.countTotalFeedback()*100))
+  return  (good/this.countTotalFeedback()*100).toFixed(1)
 }
 
   render() {
@@ -42,23 +44,20 @@ countPositiveFeedbackPercent = () => {
             options={['good', 'neutral', 'bad']}
             onLevelFeedback={this.onLevelFeedback}/>
         </Section>
-        <Section title="Statistics" 
-        good={this.state.good}
-        neutral={this.state.netural}
-        bad={this.state.bad}
-        positiveFeedback={this.countPositiveFeedbackPercent()}
-        >
-          <p>Good: 3</p>
-          <p>Netural: 2</p>
-          <p>Bad: 2</p>
-          <p>Total: 7</p>
-          <p>Positive feedback: 43%</p>
+        <Section title="Statistics">
+          <p>Good: {this.state.good}</p>
+          <p>Netural: {this.state.netural}</p>
+          <p>Bad: {this.state.bad}</p>
+          <p>Total: {this.countTotalFeedback()}</p>
+          <p>Positive feedback: {this.countPositiveFeedbackPercentage()}%</p>
           {/* <Notification message="There is no feedback"></Notification> */}
         </Section >
       </Container>
     );
   }
 }
+
+
 
 // export const App = () => {
 //   return (
