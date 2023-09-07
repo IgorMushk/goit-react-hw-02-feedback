@@ -53,8 +53,6 @@ export class App extends Component {
               netural={this.state.neutral}
               bad={this.state.bad}
               total={this.countTotalFeedback()}
-              //positiveFeedback={this.countPositiveFeedbackPercentage()}
-              //positive={this.countTotalFeedback()}
               positivePercentage={this.countPositiveFeedbackPercentage()}
             />
           ) : (
@@ -66,37 +64,3 @@ export class App extends Component {
     );
   }
 }
-
-//<Section title="Statistics">
-//<p>Good: {this.state.good}</p>
-//<p>Netural: {this.state.netural}</p>
-//<p>Bad: {this.state.bad}</p>
-//<p>Total: {this.countTotalFeedback()}</p>
-//<p>Positive feedback: {this.countPositiveFeedbackPercentage()}%</p>
-//{/* <Notification message="There is no feedback"></Notification> */}
-//</Section >
-
-// export const App = () => {
-//   return (
-//     <Container>
-//       {/* React homework template */}
-//     </Container>
-//   );
-// };
-
-// export const App = () => {
-//   return (
-//     <div
-//       style={{
-//         height: '100vh',
-//         display: 'flex',
-//         justifyContent: 'center',
-//         alignItems: 'center',
-//         fontSize: 40,
-//         color: '#010101'
-//       }}
-//     >
-//       React homework template
-//     </div>
-//   );
-// };

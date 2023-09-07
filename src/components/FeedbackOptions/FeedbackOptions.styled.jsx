@@ -8,16 +8,13 @@ export const FeedbackBtn = styled.div`
 `;
 
 export const ButtonStyle = styled.button`
-  //background: 'lightgreen';
-  //color: 'black';
-  //border: '1px solid green';
   border-radius: 4px;
   width: 75px;
   height: 30px;
   text-transform: capitalize;
   
   &.good {
-   border: '1px solid #ca8080';
+   border: 1px solid #24b81f;
     }
   &.good:hover {
    background-color: #24b81f;
@@ -26,16 +23,16 @@ export const ButtonStyle = styled.button`
   }
 
   &.neutral {
-   border: '1px solid #ca8080';
+   border: 1px solid #c7b406;
     }
   &.neutral:hover {
-   background-color: #dfca0f;
+   background-color: #c7b406;
    color: white;
    cursor: pointer;
   }
 
   &.bad {
-   border: '1px solid #ca8080';
+   border: 1px solid #ec5252;
    //border: '1px solid red'
   }
   &.bad:hover {
