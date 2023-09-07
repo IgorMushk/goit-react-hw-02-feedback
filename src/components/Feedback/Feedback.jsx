@@ -14,11 +14,6 @@ export const Feedback = ({ options, onLevelFeedback }) => {
           {option}
         </button>
       ))}
-      {/* <div>
-        <button type="button">!!!good</button>
-        <button type="button">!!!netural</button>
-        <button type="button">!!!bad</button>
-      </div> */}
     </>
   );
 };
