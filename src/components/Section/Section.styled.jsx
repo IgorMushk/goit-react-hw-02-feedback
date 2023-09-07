@@ -7,7 +7,7 @@ export const SectionConteiner = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 40px;
-  outline: 2px solid red;
+  //outline: 2px solid red;
 `;
 
 export const Title = styled.h2`
@@ -15,5 +15,6 @@ export const Title = styled.h2`
   margin-bottom: 0;
   font-size: 28px;
   font-weight: 600;
+  text-align: left;
 `;
 

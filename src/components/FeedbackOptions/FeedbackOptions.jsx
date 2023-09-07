@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { FeedbackBtn } from './FeedbackOptions.styled';
+import { ButtonStyle, FeedbackBtn } from './FeedbackOptions.styled';
 
 export const FeedbackOptions = ({ options, onLevelFeedback }) => {
   //console.log('option', options);
@@ -7,13 +7,14 @@ export const FeedbackOptions = ({ options, onLevelFeedback }) => {
   return (
     <FeedbackBtn>
       {options.map(option => (
-        <button
+        <ButtonStyle
           type="button"
+          className={option}
           key={option}
           onClick={() => onLevelFeedback(option)}
         >
           {option}
-        </button>
+        </ButtonStyle>
       ))}
     </FeedbackBtn>
   );
