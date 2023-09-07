@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { Container } from './App.styled';
+import { Section } from './Section/Section';
 
 export class App extends Component {
   state = {
@@ -11,14 +12,8 @@ export class App extends Component {
   render() {
     return (
     <Container>
-      <section>
-        <h2>Please leave feedback</h2>
-         <div>
-          <button type='button'>good</button>
-          <button type='button'>netural</button>
-          <button type='button'>bad</button>
-         </div>
-      </section>
+      <Section  title="">
+      </Section>
       <section>
         <h2>Statistics</h2>
         {/* <Notification message="There is no feedback"></Notification> */}
